@@ -11,6 +11,8 @@ import uv.fei.sistemadetutorias.domain.Academico;
 import uv.fei.sistemadetutorias.bussinesslogic.ExperienciaEducativaDAO;
 import uv.fei.sistemadetutorias.domain.ExperienciaEducativa;
 import java.util.ArrayList;
+import uv.fei.sistemadetutorias.bussinesslogic.ProblematicaDAO;
+import uv.fei.sistemadetutorias.domain.Problematica;
 /**
  *
  * @author cashd
@@ -33,7 +35,7 @@ public class Main{
         /**
          * Métodos Experiencia Educativa
         */
-        ExperienciaEducativaDAO experienciaEducativaDao = new ExperienciaEducativaDAO();
+       // ExperienciaEducativaDAO experienciaEducativaDao = new ExperienciaEducativaDAO();
         
         /**
          * Consultar
@@ -54,10 +56,23 @@ public class Main{
          * Agregar
          * NOTA: Dice que no guarda pero sí hace el registro
         */
+        /*
         ExperienciaEducativa experienciaEducativa = new ExperienciaEducativa(6987, "Lectura y Redaccion", "TECO");
         experienciaEducativaDao.agregarExperienciaEducativa(experienciaEducativa);
         boolean resultadoAgregar = experienciaEducativaDao.agregarExperienciaEducativa(experienciaEducativa); 
         System.out.println(resultadoAgregar);
+        */
         
+        
+        /*
+        
+        ProblematicaDAO dao = new ProblematicaDAO();
+        Problematica problematica = new Problematica();
+        problematica.setIdSesion(1);  
+        problematica.setTitulo("Se enfermó");
+        problematica.setDescripcion("El estudiante se enfermó");
+        problematica.setSolucion("El estudiante va al doctor");
+        dao.insertarProblematica(problematica);
+        */
     }
 }
