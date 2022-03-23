@@ -64,15 +64,17 @@ public class Main{
         */
         
         
-        /*
+        
         
         ProblematicaDAO dao = new ProblematicaDAO();
         Problematica problematica = new Problematica();
-        problematica.setIdSesion(1);  
+        problematica.setIdSesion(1);
+        //problematica.setIdProblematica(7);
         problematica.setTitulo("Se enfermó");
         problematica.setDescripcion("El estudiante se enfermó");
         problematica.setSolucion("El estudiante va al doctor");
+        //dao.eliminarProblematica(problematica);
         dao.insertarProblematica(problematica);
-        */
+        
     }
 }
