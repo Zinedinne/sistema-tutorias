@@ -12,7 +12,9 @@ import uv.fei.sistemadetutorias.bussinesslogic.ExperienciaEducativaDAO;
 import uv.fei.sistemadetutorias.domain.ExperienciaEducativa;
 import java.util.ArrayList;
 import uv.fei.sistemadetutorias.bussinesslogic.ProblematicaDAO;
+import uv.fei.sistemadetutorias.bussinesslogic.SolucionProblematicaDAO;
 import uv.fei.sistemadetutorias.domain.Problematica;
+import uv.fei.sistemadetutorias.domain.SolucionProblematica;
 /**
  *
  * @author cashd
@@ -64,17 +66,68 @@ public class Main{
         */
         
         
-        
-        
+        //Insertar problematica
+        /*
         ProblematicaDAO dao = new ProblematicaDAO();
         Problematica problematica = new Problematica();
         problematica.setIdSesion(1);
-        //problematica.setIdProblematica(7);
-        problematica.setTitulo("Se enfermó");
-        problematica.setDescripcion("El estudiante se enfermó");
-        problematica.setSolucion("El estudiante va al doctor");
-        //dao.eliminarProblematica(problematica);
+        problematica.setTitulo("No pudo asistir a clase");
+        problematica.setDescripcion("Se enfermó");
         dao.insertarProblematica(problematica);
+        */
+        
+        //consultar problematica
+        /*
+        ProblematicaDAO problematicaDao = new ProblematicaDAO();
+                ArrayList<Problematica> problematicas= (ArrayList<Problematica>) problematicaDao.consultarProblematica();
+                for(Problematica problematica : problematicas){
+                    System.out.println(String.format("Se encontró: %d %s %s",problematica.getIdSesion(), problematica.getTitulo(), problematica.getDescripcion()));
+                        
+                }
+        */
+                
+        //Actualizar problematica
+        /*
+        ProblematicaDAO dao = new ProblematicaDAO();
+        Problematica problematica = new Problematica();
+        problematica.setIdProblematica(8);
+        problematica.setDescripcion("Se enfermó del estómago");
+        dao.modificarProblematica(problematica);
+        */
+        
+        //eliminar problematica
+        /*
+        ProblematicaDAO dao = new ProblematicaDAO();
+        Problematica problematica = new Problematica();
+        problematica.setIdProblematica(4);
+        dao.eliminarProblematica(problematica);
+        */
+        
+        //Insertar solucionProblematica
+        /*
+        SolucionProblematicaDAO dao = new SolucionProblematicaDAO();
+        SolucionProblematica solucionProblematica = new SolucionProblematica();
+        solucionProblematica.setIdProblematica(4);
+        solucionProblematica.setDescripcionSolucion("Hablar con sus profesores y pedir prórroga");
+        dao.insertarSolucionProblematica(solucionProblematica);
+        */
+        
+        //Actualizar solucionProblematica
+        /*
+        SolucionProblematicaDAO dao = new SolucionProblematicaDAO();
+        SolucionProblematica solucionProblematica = new SolucionProblematica();
+        solucionProblematica.setIdProblematica(4);
+        solucionProblematica.setDescripcionSolucion("Se habló con sus profesores y otorgaron prórroga");
+        dao.modificarSolucionProblematica(solucionProblematica);
+        */
+        
+        //consultar solucionProblematica
+        /*
+        SolucionProblematicaDAO solucionProblematicaDao = new SolucionProblematicaDAO();
+        SolucionProblematica solucionProblematica = new SolucionProblematica();
+        solucionProblematica = (SolucionProblematica) solucionProblematicaDao.buscarSolucionProblematica(8);
+        System.out.println(String.format("Se encontró: %s", solucionProblematica.getDescripcionSolucion()));
+        */
         
     }
 }

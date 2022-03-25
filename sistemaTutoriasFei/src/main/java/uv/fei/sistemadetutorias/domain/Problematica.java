@@ -5,6 +5,8 @@
  */
 package uv.fei.sistemadetutorias.domain;
 
+import java.util.Objects;
+
 /**
  *
  * @author Zinedinne
@@ -13,7 +15,6 @@ public class Problematica {
     private int idProblematica;
     private int idSesion;
     private String titulo;
-    private String solucion;
     private String descripcion;
 
     public int getIdProblematica() {
@@ -40,13 +41,7 @@ public class Problematica {
         this.titulo = titulo;
     }
 
-    public String getSolucion() {
-        return solucion;
-    }
-
-    public void setSolucion(String solucion) {
-        this.solucion = solucion;
-    }
+   
 
     public String getDescripcion() {
         return descripcion;
@@ -57,8 +52,30 @@ public class Problematica {
     }
 
     @Override
-    public String toString() {
-        return "Problematica{" + "idProblematica=" + idProblematica + ", idSesion=" + idSesion + ", titulo=" + titulo + ", solucion=" + solucion + ", descripcion=" + descripcion + '}';
+    public int hashCode() {
+        int hash = 3;
+        return hash;
     }
+
+    @Override
+    public boolean equals(Object object) {
+         boolean isEquals=false;
+        if (object == this){
+            isEquals=true;
+        }
+        if(object!=null && object instanceof Problematica){
+            Problematica other = (Problematica) object;
+            isEquals= this.getDescripcion().equals(other.getDescripcion()) && this.getTitulo().equals(other.getTitulo()) && this.getIdSesion()==other.getIdSesion() ;
+        }
+        return isEquals;
+    }
+
+    
+    
+    @Override
+    public String toString() {
+        return "Problematica{" + "idProblematica=" + idProblematica + ", idSesion=" + idSesion + ", titulo=" + titulo + ", descripcion=" + descripcion + '}';
+    }
+
     
 }
